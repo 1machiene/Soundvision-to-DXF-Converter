@@ -37,6 +37,16 @@ The page loads these at runtime from the internet:
 
 The first page load is therefore larger than a normal static site. Browsers generally cache those runtime files after loading them.
 
+## Disclaimer
+
+This is an independent community project and is not affiliated with,
+endorsed by, or supported by L-Acoustics.
+
+Soundvision and L-Acoustics are trademarks of their respective owner.
+
+Compatibility has primarily been tested with Soundvision 2026.3.1.
+Use generated files at your own risk and verify critical geometry before use.
+
 ## Privacy / security note
 
 The selected Soundvision and loudspeaker DXF files are written only to Pyodide's virtual filesystem inside the browser tab. This app does not contain code that POSTs or uploads those files to a server. The Python runtime and Python packages themselves are downloaded from their public CDNs/package sources.

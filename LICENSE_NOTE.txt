@@ -1,0 +1,4 @@
+This package contains the user's Soundvision-to-DXF converter code and a browser wrapper.
+Before publishing the repository publicly, choose and add the software license you actually want to grant to other users.
+
+Third-party runtime components have their own licenses, including Pyodide and ezdxf.

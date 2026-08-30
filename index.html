@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Convert encrypted L-Acoustics Soundvision project files to Vectorworks-friendly DXF directly in your browser.">
+  <meta name="theme-color" content="#101317">
+  <title>Soundvision → DXF Converter</title>
+  <link rel="icon" type="image/png" href="./icon-256.png">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="https://cdn.jsdelivr.net/pyodide/v314.0.6/full/pyodide.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <img class="logo" src="./icon-256.png" alt="SV to DXF logo">
+      <div>
+        <p class="eyebrow">Browser edition · Core v18</p>
+        <h1>Soundvision → DXF Converter</h1>
+        <p class="subtitle">Select a Soundvision project file. Conversion runs locally in your browser; project data is not uploaded to a server.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <span class="step">1</span>
+          <h2>Soundvision file</h2>
+        </div>
+        <span class="required">Required</span>
+      </div>
+
+      <input id="svFile" class="visually-hidden" type="file" accept=".xmls,.xmlp">
+      <button id="svDrop" class="dropzone" type="button">
+        <span class="drop-icon">＋</span>
+        <strong>Choose or drop a .xmls / .xmlp file</strong>
+        <span id="svFileName" class="file-note">No file selected</span>
+      </button>
+    </section>
+
+    <section class="panel optional-panel">
+      <div class="section-heading">
+        <div>
+          <span class="step">2</span>
+          <h2>Loudspeaker DXF</h2>
+        </div>
+        <span class="optional">Optional</span>
+      </div>
+      <p class="help">Add the loudspeaker DXF exported by Soundvision if you want v18 to merge it into the same file.</p>
+      <input id="speakerFile" class="visually-hidden" type="file" accept=".dxf">
+      <button id="speakerDrop" class="dropzone compact" type="button">
+        <strong>Choose or drop Soundvision loudspeaker DXF</strong>
+        <span id="speakerFileName" class="file-note">No DXF selected</span>
+      </button>
+      <button id="clearSpeaker" class="text-button hidden" type="button">Remove loudspeaker DXF</button>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <span class="step">3</span>
+          <h2>DXF export</h2>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="check-row">
+          <input id="faces" type="checkbox">
+          <span><strong>3D Faces</strong><small>3DFACE entities</small></span>
+        </label>
+        <label class="check-row">
+          <input id="outlines" type="checkbox" checked>
+          <span><strong>3D Outlines</strong><small>Closed 3D polylines · v18 default</small></span>
+        </label>
+        <label class="check-row">
+          <input id="points" type="checkbox">
+          <span><strong>Vertices</strong><small>Individual DXF POINT entities</small></span>
+        </label>
+      </div>
+
+      <button id="convertButton" class="primary" type="button" disabled>Initializing converter…</button>
+      <div id="engineStatus" class="status info" role="status" aria-live="polite">Loading Python runtime and converter dependencies…</div>
+    </section>
+
+    <section id="resultPanel" class="panel result hidden" aria-live="polite">
+      <div class="section-heading">
+        <div>
+          <span class="step done">✓</span>
+          <h2>Conversion complete</h2>
+        </div>
+      </div>
+      <div id="stats" class="stats"></div>
+      <a id="downloadButton" class="primary download" href="#" download>Download DXF</a>
+    </section>
+
+    <section class="privacy">
+      <strong>Local processing</strong>
+      <span>The selected Soundvision and DXF files are read by WebAssembly/Python inside this browser tab. GitHub Pages only serves the application files.</span>
+    </section>
+
+    <footer>
+      <span>Soundvision → DXF Converter · Web v1 · Core v18</span>
+      <span>Output units: metres</span>
+    </footer>
+  </main>
+</body>
+</html>

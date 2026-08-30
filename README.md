@@ -4,6 +4,8 @@ A browser-hosted version of **Soundvision to DXF Converter v18**.
 
 The application accepts an encrypted Soundvision `.xmls` or `.xmlp` file directly. There is **no manual Surface input**. Conversion runs locally in the browser with Pyodide; the selected project is not uploaded to the GitHub Pages host.
 
+Deployment: https://1machiene.github.io/Soundvision-to-DXF-Converter/
+
 ## Features
 
 - Open / drag-and-drop Soundvision `.xmls` and `.xmlp` files

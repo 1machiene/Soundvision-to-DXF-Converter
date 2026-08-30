@@ -52,5 +52,3 @@ Users must only process Soundvision project files they are authorized to access.
 ## Privacy / security note
 
 The selected Soundvision and loudspeaker DXF files are written only to Pyodide's virtual filesystem inside the browser tab. This app does not contain code that POSTs or uploads those files to a server. The Python runtime and Python packages themselves are downloaded from their public CDNs/package sources.
-
-The Soundvision decryption constants are included client-side because this is a browser-only application.

@@ -84,7 +84,6 @@ VW_LOUDSPEAKER_ROOT = ("SV", "Loudspeakers")
 
 
 # -----------------------------------------------------------------------------
-# Soundvision 2026.3.1 AES-256-CBC constants found in the application binary.
 # Soundvision passes the ASCII bytes directly to EVP AES-256-CBC, i.e. AES uses
 # the first 32 ASCII bytes of the 64-char key constant and the first 16 ASCII
 # bytes of the 32-char IV constant.
@@ -374,8 +373,8 @@ def decrypt_soundvision(path: Path) -> tuple[bytes, str]:
         return clear, label
 
     raise RuntimeError(
-        "The file could not be decrypted as XML with any known "
-        "Soundvision 2026.3.1 key."
+        "The file could not be decrypted."
+        "Sorry."
     )
 
 

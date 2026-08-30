@@ -47,6 +47,8 @@ Soundvision and L-Acoustics are trademarks of their respective owner.
 Compatibility has primarily been tested with Soundvision 2026.3.1.
 Use generated files at your own risk and verify critical geometry before use.
 
+Users must only process Soundvision project files they are authorized to access. The decryption functionality is provided solely for file-format interoperability and conversion of user-accessible project data.
+
 ## Privacy / security note
 
 The selected Soundvision and loudspeaker DXF files are written only to Pyodide's virtual filesystem inside the browser tab. This app does not contain code that POSTs or uploads those files to a server. The Python runtime and Python packages themselves are downloaded from their public CDNs/package sources.
